@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<style>
+    table {
+        font-size: 24px;
+        background-color: darkseagreen;
+        border-spacing: 0;
+        border-collapse: collapse;
+        -webkit-box-shadow: 4px 6px 8px 0px rgb(34 60 80 / 35%);
+        -moz-box-shadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.35);
+        box-shadow: 4px 6px 8px 0px rgb(34 60 80 / 35%);
+        margin: 24px 0 0 18px;
+    }
+    th, td {
+        padding: 10px;
+        border: 1px solid black;
+    }
+    tbody tr:nth-of-type(odd){
+        background-color: lemonchiffon;
+    }
+    tbody tr:nth-of-type(even){
+        background-color: bisque;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Model</th>
+                <th scope="col">Color</th>
+                <th scope="col">Years</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="car:${cars}">
+                <td th:text="${car.model}">
+                <td th:text="${car.color}">
+                <td th:text="${car.year}">
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
